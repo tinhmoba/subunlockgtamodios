@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SUB TO UNLOCK PRO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#060606;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#00ffcc22,transparent 30%),
+    radial-gradient(circle at bottom right,#00aaff22,transparent 30%);
+    z-index:-1;
+}
+
+/* MAIN */
+.container{
+    width:95%;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.logo{
+    text-align:center;
+    font-size:35px;
+    font-weight:700;
+    margin:20px 0;
+    color:#00e5ff;
+    text-shadow:0 0 20px #00e5ff;
+}
+
+.card{
+    background:#101010;
+    border:1px solid #222;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 0 25px #000;
+    margin-bottom:25px;
+    animation:fade .5s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.title{
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:15px;
+    color:#00e5ff;
+}
+
+.desc{
+    color:#aaa;
+    margin-bottom:25px;
+    line-height:1.7;
+}
+
+/* BUTTON */
+.btn{
+    width:100%;
+    border:none;
+    padding:16px;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    color:#fff;
+    background:linear-gradient(45deg,#00bcd4,#2196f3);
+    box-shadow:0 0 15px #00bcd4aa;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 25px #00e5ff;
+}
+
+.btn.green{
+    background:linear-gradient(45deg,#00c853,#64dd17);
+    box-shadow:0 0 20px #00ff95;
+}
+
+/* ADS */
+.ads-box{
+    margin:25px 0;
+    border:2px dashed #333;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    color:#666;
+    background:#0b0b0b;
+}
+
+.ads-title{
+    font-size:14px;
+    margin-bottom:10px;
+    color:#999;
+}
+
+/* CHANNEL */
+.channel-box{
+    background:#0c0c0c;
+    border:1px solid #222;
+    border-radius:16px;
+    padding:18px;
+    margin-bottom:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.channel-info{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.avatar{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:linear-gradient(45deg,#00e5ff,#2196f3);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:20px;
+}
+
+.channel-name{
+    font-size:18px;
+    font-weight:600;
+}
+
+.channel-sub{
+    color:#888;
+    font-size:14px;
+}
+
+.sub-btn{
+    padding:12px 20px;
+    border:none;
+    border-radius:12px;
+    font-weight:700;
+    cursor:pointer;
+    background:#ff0033;
+    color:#fff;
+    transition:.3s;
+}
+
+.sub-btn.done{
+    background:#00c853;
+    box-shadow:0 0 15px #00ff88;
+}
+
+/* LOADING */
+.loading-box{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.loader{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    border:10px solid #111;
+    border-top:10px solid #00e5ff;
+    margin:auto;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.count{
+    font-size:55px;
+    font-weight:700;
+    margin:25px 0;
+    color:#00e5ff;
+    text-shadow:0 0 20px #00e5ff;
+}
+
+.success{
+    background:linear-gradient(45deg,#00c853,#00e676);
+    color:#fff;
+    text-decoration:none;
+    display:inline-block;
+    padding:18px 35px;
+    border-radius:15px;
+    font-weight:700;
+    margin-top:20px;
+    box-shadow:0 0 20px #00ff99;
+}
+
+/* HIDE */
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    color:#666;
+    padding:20px;
+    font-size:14px;
+}
+
+.check-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:20px 0;
+    font-size:16px;
+}
+
+input[type="checkbox"]{
+    width:22px;
+    height:22px;
+    accent-color:#00e5ff;
+}
+
+.notice{
+    background:#111;
+    border-left:4px solid #00e5ff;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:20px;
+    color:#bbb;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+SUB TO UNLOCK PRO
+</div>
+
+<!-- ========================= -->
+<!-- PAGE 1 -->
+<!-- ========================= -->
+
+<div class="page active" id="page1">
+
+<div class="ads-box">
+<div class="ads-title">KHU VỰC QUẢNG CÁO TOP</div>
+DÁN ADSENSE / BANNER / POPUP TẠI ĐÂY
+</div>
+
+<div class="card">
+
+<div class="title">
+Xác Minh Không Phải Robot
+</div>
+
+<div class="desc">
+Vui lòng hoàn thành xác minh để tiếp tục mở khóa liên kết tải xuống.
+</div>
+
+<div class="notice">
+✔ Hệ thống chống spam tự động<br>
+✔ Bảo vệ link khỏi bot<br>
+✔ Hỗ trợ mọi thiết bị
+</div>
+
+<div class="check-box">
+<input type="checkbox" id="robotCheck">
+<label for="robotCheck">Tôi không phải robot</label>
+</div>
+
+<button class="btn" onclick="goPage2()">
+TIẾP TỤC
+</button>
+
+</div>
+
+<div class="ads-box">
+<div class="ads-title">KHU VỰC ADS GIỮA TRANG</div>
+DÁN MÃ QUẢNG CÁO TẠI ĐÂY
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- PAGE 2 -->
+<!-- ========================= -->
+
+<div class="page" id="page2">
+
+<div class="ads-box">
+<div class="ads-title">ADS HEADER</div>
+DÁN QUẢNG CÁO
+</div>
+
+<div class="card">
+
+<div class="title">
+Sub 2 Kênh Để Unlock
+</div>
+
+<div class="desc">
+Sau khi Subscribe đủ 2 kênh, hệ thống sẽ mở khóa liên kết.
+</div>
+
+<!-- CHANNEL 1 -->
+<div class="channel-box">
+
+<div class="channel-info">
+<div class="avatar">
+YT
+</div>
+
+<div>
+<div class="channel-name">
+KÊNH YOUTUBE 1
+</div>
+
+<div class="channel-sub">
+Subscribe để tiếp tục
+</div>
+</div>
+</div>
+
+<button class="sub-btn" id="sub1"
+onclick="subscribeChannel(1)">
+SUBSCRIBE
+</button>
+
+</div>
+
+<!-- CHANNEL 2 -->
+<div class="channel-box">
+
+<div class="channel-info">
+<div class="avatar">
+YT
+</div>
+
+<div>
+<div class="channel-name">
+KÊNH YOUTUBE 2
+</div>
+
+<div class="channel-sub">
+Subscribe để tiếp tục
+</div>
+</div>
+</div>
+
+<button class="sub-btn" id="sub2"
+onclick="subscribeChannel(2)">
+SUBSCRIBE
+</button>
+
+</div>
+
+<button class="btn" id="unlockBtn"
+onclick="startLoading()" disabled
+style="opacity:.5;">
+UNLOCK LINK
+</button>
+
+</div>
+
+<div class="ads-box">
+<div class="ads-title">ADS BOTTOM</div>
+CHÈN ADSENSE / SOCIAL BAR / BANNER
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- PAGE 3 -->
+<!-- ========================= -->
+
+<div class="page" id="page3">
+
+<div class="ads-box">
+<div class="ads-title">KHU VỰC QUẢNG CÁO</div>
+DÁN QUẢNG CÁO VIDEO / POPUNDER
+</div>
+
+<div class="card loading-box">
+
+<div class="title">
+Đang Mở Khóa Liên Kết
+</div>
+
+<div class="loader"></div>
+
+<div class="count" id="count">
+15
+</div>
+
+<div class="desc">
+Vui lòng chờ hệ thống xác minh hoàn tất...
+</div>
+
+<div id="doneBox" style="display:none;">
+
+<div style="
+font-size:22px;
+font-weight:700;
+color:#00ff95;
+margin-bottom:20px;">
+✔ ĐÃ HOÀN THÀNH
+</div>
+
+<a class="success"
+href="https://example.com"
+target="_blank">
+TRUY CẬP LINK
+</a>
+
+</div>
+
+</div>
+
+<div class="ads-box">
+<div class="ads-title">FOOTER ADS</div>
+DÁN MÃ QUẢNG CÁO TẠI ĐÂY
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 SUB TO UNLOCK PRO
+</div>
+
+</div>
+
+<script>
+
+let subCount = 0;
+
+function showPage(pageId){
+
+document.querySelectorAll(".page").forEach(page=>{
+page.classList.remove("active");
+});
+
+document.getElementById(pageId).classList.add("active");
+}
+
+function goPage2(){
+
+const check = document.getElementById("robotCheck");
+
+if(!check.checked){
+
+alert("Vui lòng xác minh không phải robot!");
+return;
+}
+
+showPage("page2");
+}
+
+function subscribeChannel(num){
+
+window.open("https://youtube.com","_blank");
+
+const btn = document.getElementById("sub"+num);
+
+if(!btn.classList.contains("done")){
+
+btn.innerHTML = "ĐÃ HOÀN THÀNH";
+btn.classList.add("done");
+
+subCount++;
+}
+
+if(subCount >= 2){
+
+const unlock = document.getElementById("unlockBtn");
+
+unlock.disabled = false;
+unlock.style.opacity = "1";
+
+unlock.classList.add("green");
+}
+}
+
+function startLoading(){
+
+showPage("page3");
+
+let time = 15;
+
+const count = document.getElementById("count");
+
+const done = document.getElementById("doneBox");
+
+const timer = setInterval(()=>{
+
+time--;
+
+count.innerHTML = time;
+
+if(time <= 0){
+
+clearInterval(timer);
+
+count.style.display = "none";
+
+done.style.display = "block";
+}
+
+},1000);
+}
+
+</script>
+
+</body>
+</html>
