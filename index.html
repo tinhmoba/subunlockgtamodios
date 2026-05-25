@@ -9,544 +9,589 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#060606;
-    color:#fff;
-    overflow-x:hidden;
+background:#050505;
+color:#fff;
+overflow-x:hidden;
 }
 
-/* BACKGROUND */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at top left,#00ffcc22,transparent 30%),
-    radial-gradient(circle at bottom right,#00aaff22,transparent 30%);
-    z-index:-1;
-}
-
-/* MAIN */
 .container{
-    width:95%;
-    max-width:900px;
-    margin:auto;
-    padding:20px;
+max-width:500px;
+margin:auto;
+padding:20px;
 }
 
-.logo{
-    text-align:center;
-    font-size:35px;
-    font-weight:700;
-    margin:20px 0;
-    color:#00e5ff;
-    text-shadow:0 0 20px #00e5ff;
-}
-
-.card{
-    background:#101010;
-    border:1px solid #222;
-    border-radius:20px;
-    padding:30px;
-    box-shadow:0 0 25px #000;
-    margin-bottom:25px;
-    animation:fade .5s ease;
-}
-
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.title{
-    font-size:26px;
-    font-weight:700;
-    margin-bottom:15px;
-    color:#00e5ff;
-}
-
-.desc{
-    color:#aaa;
-    margin-bottom:25px;
-    line-height:1.7;
-}
-
-/* BUTTON */
-.btn{
-    width:100%;
-    border:none;
-    padding:16px;
-    border-radius:14px;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
-    color:#fff;
-    background:linear-gradient(45deg,#00bcd4,#2196f3);
-    box-shadow:0 0 15px #00bcd4aa;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 0 25px #00e5ff;
-}
-
-.btn.green{
-    background:linear-gradient(45deg,#00c853,#64dd17);
-    box-shadow:0 0 20px #00ff95;
-}
-
-/* ADS */
-.ads-box{
-    margin:25px 0;
-    border:2px dashed #333;
-    border-radius:18px;
-    padding:25px;
-    text-align:center;
-    color:#666;
-    background:#0b0b0b;
-}
-
-.ads-title{
-    font-size:14px;
-    margin-bottom:10px;
-    color:#999;
-}
-
-/* CHANNEL */
-.channel-box{
-    background:#0c0c0c;
-    border:1px solid #222;
-    border-radius:16px;
-    padding:18px;
-    margin-bottom:18px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-}
-
-.channel-info{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.avatar{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:linear-gradient(45deg,#00e5ff,#2196f3);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:700;
-    font-size:20px;
-}
-
-.channel-name{
-    font-size:18px;
-    font-weight:600;
-}
-
-.channel-sub{
-    color:#888;
-    font-size:14px;
-}
-
-.sub-btn{
-    padding:12px 20px;
-    border:none;
-    border-radius:12px;
-    font-weight:700;
-    cursor:pointer;
-    background:#ff0033;
-    color:#fff;
-    transition:.3s;
-}
-
-.sub-btn.done{
-    background:#00c853;
-    box-shadow:0 0 15px #00ff88;
-}
-
-/* LOADING */
-.loading-box{
-    text-align:center;
-    padding:40px 20px;
-}
-
-.loader{
-    width:130px;
-    height:130px;
-    border-radius:50%;
-    border:10px solid #111;
-    border-top:10px solid #00e5ff;
-    margin:auto;
-    animation:spin 1s linear infinite;
-}
-
-@keyframes spin{
-    100%{
-        transform:rotate(360deg);
-    }
-}
-
-.count{
-    font-size:55px;
-    font-weight:700;
-    margin:25px 0;
-    color:#00e5ff;
-    text-shadow:0 0 20px #00e5ff;
-}
-
-.success{
-    background:linear-gradient(45deg,#00c853,#00e676);
-    color:#fff;
-    text-decoration:none;
-    display:inline-block;
-    padding:18px 35px;
-    border-radius:15px;
-    font-weight:700;
-    margin-top:20px;
-    box-shadow:0 0 20px #00ff99;
-}
-
-/* HIDE */
 .page{
-    display:none;
+display:none;
+animation:fade .5s ease;
 }
 
 .page.active{
-    display:block;
+display:block;
 }
 
-/* FOOTER */
+@keyframes fade{
+from{opacity:0;transform:translateY(15px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.card{
+background:#111;
+border:1px solid #222;
+border-radius:20px;
+padding:25px;
+margin-top:20px;
+box-shadow:0 0 20px rgba(0,255,255,.08);
+}
+
+.logo{
+text-align:center;
+font-size:30px;
+font-weight:700;
+margin-top:20px;
+background:linear-gradient(90deg,#00f0ff,#00ff90);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.desc{
+text-align:center;
+color:#aaa;
+margin-top:10px;
+font-size:14px;
+}
+
+.verify-box{
+background:#181818;
+border:1px solid #333;
+padding:18px;
+border-radius:15px;
+display:flex;
+align-items:center;
+gap:12px;
+cursor:pointer;
+transition:.3s;
+margin-top:25px;
+}
+
+.verify-box:hover{
+border-color:#00e5ff;
+transform:scale(1.02);
+}
+
+.verify-box input{
+width:23px;
+height:23px;
+accent-color:#00e5ff;
+}
+
+.btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+margin-top:20px;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+background:linear-gradient(90deg,#00e5ff,#00ff99);
+color:#000;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 0 20px rgba(0,255,255,.3);
+}
+
+.btn:disabled{
+opacity:.5;
+cursor:not-allowed;
+}
+
+.sub-box{
+background:#181818;
+border:2px solid #2b2b2b;
+padding:18px;
+border-radius:18px;
+margin-top:18px;
+transition:.3s;
+}
+
+.sub-box.done{
+border-color:#00ff90;
+background:rgba(0,255,144,.08);
+}
+
+.channel{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+}
+
+.channel-left{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.avatar{
+width:55px;
+height:55px;
+border-radius:50%;
+background:linear-gradient(45deg,#00e5ff,#00ff90);
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+font-size:20px;
+color:#000;
+}
+
+.channel-name{
+font-weight:600;
+}
+
+.channel-sub{
+font-size:12px;
+color:#aaa;
+}
+
+.sub-btn{
+padding:10px 18px;
+border:none;
+border-radius:12px;
+background:red;
+color:#fff;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.sub-btn.done{
+background:#00cc66;
+}
+
+.status{
+margin-top:10px;
+font-size:13px;
+color:#00ff90;
+display:none;
+}
+
+.status.show{
+display:block;
+}
+
+.loading-wrap{
+text-align:center;
+padding:30px 10px;
+}
+
+.loader{
+width:110px;
+height:110px;
+border-radius:50%;
+border:8px solid #222;
+border-top:8px solid #00e5ff;
+margin:auto;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+.timer{
+font-size:42px;
+font-weight:700;
+margin-top:20px;
+color:#00ff90;
+}
+
+.unlock-box{
+margin-top:30px;
+display:none;
+}
+
+.unlock-link{
+display:block;
+padding:16px;
+border-radius:15px;
+background:linear-gradient(90deg,#00e5ff,#00ff90);
+text-decoration:none;
+font-weight:700;
+color:#000;
+}
+
+.ads{
+margin-top:20px;
+background:#151515;
+border:1px dashed #444;
+border-radius:15px;
+padding:25px;
+text-align:center;
+color:#888;
+font-size:14px;
+}
+
+.topbar{
+height:70px;
+background:#0c0c0c;
+border-bottom:1px solid #222;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+font-size:18px;
+position:sticky;
+top:0;
+z-index:99;
+}
+
+.glow{
+color:#00e5ff;
+}
+
 .footer{
-    text-align:center;
-    color:#666;
-    padding:20px;
-    font-size:14px;
-}
-
-.check-box{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin:20px 0;
-    font-size:16px;
-}
-
-input[type="checkbox"]{
-    width:22px;
-    height:22px;
-    accent-color:#00e5ff;
-}
-
-.notice{
-    background:#111;
-    border-left:4px solid #00e5ff;
-    padding:15px;
-    border-radius:12px;
-    margin-bottom:20px;
-    color:#bbb;
+text-align:center;
+margin-top:30px;
+color:#666;
+font-size:12px;
+padding-bottom:30px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-<div class="logo">
-SUB TO UNLOCK PRO
+<div class="topbar">
+SUB TO <span class="glow">&nbsp;UNLOCK PRO</span>
 </div>
 
-<!-- ========================= -->
-<!-- PAGE 1 -->
-<!-- ========================= -->
+<div class="container">
 
+<!-- PAGE 1 -->
 <div class="page active" id="page1">
 
-<div class="ads-box">
-<div class="ads-title">KHU VỰC QUẢNG CÁO TOP</div>
-DÁN ADSENSE / BANNER / POPUP TẠI ĐÂY
+<div class="logo">XÁC MINH</div>
+
+<div class="desc">
+Vui lòng xác minh để tiếp tục mở khóa nội dung.
 </div>
 
 <div class="card">
 
-<div class="title">
-Xác Minh Không Phải Robot
+<div class="ads">
+<script>
+  atOptions = {
+    'key' : '560994876ae0ec6965e62b4dffe2b079',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
 </div>
 
-<div class="desc">
-Vui lòng hoàn thành xác minh để tiếp tục mở khóa liên kết tải xuống.
-</div>
-
-<div class="notice">
-✔ Hệ thống chống spam tự động<br>
-✔ Bảo vệ link khỏi bot<br>
-✔ Hỗ trợ mọi thiết bị
-</div>
-
-<div class="check-box">
+<label class="verify-box">
 <input type="checkbox" id="robotCheck">
-<label for="robotCheck">Tôi không phải robot</label>
+<div>
+<div style="font-weight:600;">Tôi không phải robot</div>
+<div style="font-size:12px;color:#999;">
+reCAPTCHA Security Verify
 </div>
+</div>
+</label>
 
-<button class="btn" onclick="goPage2()">
+<button class="btn" id="verifyBtn" disabled>
 TIẾP TỤC
 </button>
 
+<div class="ads">
+<script>
+  atOptions = {
+    'key' : '560994876ae0ec6965e62b4dffe2b079',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
+
 </div>
 
-<div class="ads-box">
-<div class="ads-title">KHU VỰC ADS GIỮA TRANG</div>
-DÁN MÃ QUẢNG CÁO TẠI ĐÂY
+</div>
 </div>
 
-</div>
-
-<!-- ========================= -->
 <!-- PAGE 2 -->
-<!-- ========================= -->
-
 <div class="page" id="page2">
 
-<div class="ads-box">
-<div class="ads-title">ADS HEADER</div>
-DÁN QUẢNG CÁO
+<div class="logo">SUB ĐỂ MỞ KHÓA</div>
+
+<div class="desc">
+Hoàn thành đăng ký 2 kênh YouTube để tiếp tục.
 </div>
 
 <div class="card">
 
-<div class="title">
-Sub 2 Kênh Để Unlock
-</div>
+<div class="ads">
+<script>
+  atOptions = {
+    'key' : '560994876ae0ec6965e62b4dffe2b079',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
 
-<div class="desc">
-Sau khi Subscribe đủ 2 kênh, hệ thống sẽ mở khóa liên kết.
 </div>
 
 <!-- CHANNEL 1 -->
-<div class="channel-box">
+<div class="sub-box" id="box1">
 
-<div class="channel-info">
-<div class="avatar">
-YT
-</div>
+<div class="channel">
+
+<div class="channel-left">
+<div class="avatar">G</div>
 
 <div>
-<div class="channel-name">
-KÊNH YOUTUBE 1
-</div>
-
-<div class="channel-sub">
-Subscribe để tiếp tục
-</div>
+<div class="channel-name">KÊNH YOUTUBE A</div>
+<div class="channel-sub">SHARE GTA MOD PACK</div>
 </div>
 </div>
 
-<button class="sub-btn" id="sub1"
-onclick="subscribeChannel(1)">
+<button class="sub-btn" id="sub1">
 SUBSCRIBE
 </button>
+
+</div>
+
+<div class="status" id="status1">
+✔ Đã hoàn thành kênh thứ nhất
+</div>
 
 </div>
 
 <!-- CHANNEL 2 -->
-<div class="channel-box">
+<div class="sub-box" id="box2">
 
-<div class="channel-info">
-<div class="avatar">
-YT
-</div>
+<div class="channel">
+
+<div class="channel-left">
+<div class="avatar">K</div>
 
 <div>
-<div class="channel-name">
-KÊNH YOUTUBE 2
-</div>
-
-<div class="channel-sub">
-Subscribe để tiếp tục
-</div>
+<div class="channel-name">KÊNH YOUTUBE B</div>
+<div class="channel-sub">SHARE GTA MOD PACK</div>
 </div>
 </div>
 
-<button class="sub-btn" id="sub2"
-onclick="subscribeChannel(2)">
+<button class="sub-btn" id="sub2">
 SUBSCRIBE
 </button>
 
 </div>
 
-<button class="btn" id="unlockBtn"
-onclick="startLoading()" disabled
-style="opacity:.5;">
-UNLOCK LINK
+<div class="status" id="status2">
+✔ Đã hoàn thành kênh thứ hai
+</div>
+
+</div>
+
+<button class="btn" id="unlockBtn" disabled>
+MỞ KHÓA LINK
 </button>
 
+<div class="ads">
+<script>
+  atOptions = {
+    'key' : '560994876ae0ec6965e62b4dffe2b079',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
+
 </div>
 
-<div class="ads-box">
-<div class="ads-title">ADS BOTTOM</div>
-CHÈN ADSENSE / SOCIAL BAR / BANNER
+</div>
 </div>
 
-</div>
-
-<!-- ========================= -->
 <!-- PAGE 3 -->
-<!-- ========================= -->
-
 <div class="page" id="page3">
 
-<div class="ads-box">
-<div class="ads-title">KHU VỰC QUẢNG CÁO</div>
-DÁN QUẢNG CÁO VIDEO / POPUNDER
+<div class="logo">ĐANG MỞ KHÓA</div>
+
+<div class="card">
+
+<div class="ads">
+<script>
+  atOptions = {
+    'key' : '560994876ae0ec6965e62b4dffe2b079',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
+
 </div>
 
-<div class="card loading-box">
-
-<div class="title">
-Đang Mở Khóa Liên Kết
-</div>
+<div class="loading-wrap">
 
 <div class="loader"></div>
 
-<div class="count" id="count">
+<div class="timer" id="timer">
 15
 </div>
 
-<div class="desc">
-Vui lòng chờ hệ thống xác minh hoàn tất...
+<div style="margin-top:10px;color:#aaa;">
+Đang xác minh truy cập...
 </div>
 
-<div id="doneBox" style="display:none;">
-
-<div style="
-font-size:22px;
-font-weight:700;
-color:#00ff95;
-margin-bottom:20px;">
-✔ ĐÃ HOÀN THÀNH
 </div>
 
-<a class="success"
-href="https://example.com"
-target="_blank">
-TRUY CẬP LINK
+<div class="ads">
+<script>
+  atOptions = {
+    'key' : '560994876ae0ec6965e62b4dffe2b079',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
+
+</div>
+
+<div class="unlock-box" id="finalBox">
+
+<a class="unlock-link" href="https://packmodgta.blogspot.com/search/label/IOS%20MOD%20GTA" target="_blank">
+TRUY CẬP LINK ĐÃ MỞ KHÓA
 </a>
 
 </div>
 
+<div class="ads">
+<script>
+  atOptions = {
+    'key' : '560994876ae0ec6965e62b4dffe2b079',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
+
 </div>
 
-<div class="ads-box">
-<div class="ads-title">FOOTER ADS</div>
-DÁN MÃ QUẢNG CÁO TẠI ĐÂY
 </div>
 
 </div>
 
 <div class="footer">
-© 2026 SUB TO UNLOCK PRO
+© SUB TO UNLOCK PREMIUM UI
 </div>
 
 </div>
 
 <script>
+const robotCheck = document.getElementById("robotCheck");
+const verifyBtn = document.getElementById("verifyBtn");
 
-let subCount = 0;
-
-function showPage(pageId){
-
-document.querySelectorAll(".page").forEach(page=>{
-page.classList.remove("active");
+robotCheck.addEventListener("change", () => {
+verifyBtn.disabled = !robotCheck.checked;
 });
 
-document.getElementById(pageId).classList.add("active");
+verifyBtn.onclick = () => {
+document.getElementById("page1").classList.remove("active");
+document.getElementById("page2").classList.add("active");
+};
+
+let done1 = false;
+let done2 = false;
+
+document.getElementById("sub1").onclick = function(){
+
+window.open("https://www.youtube.com/@gtamodvn", "_blank");
+
+this.innerText = "COMPLETED";
+this.classList.add("done");
+
+document.getElementById("box1").classList.add("done");
+document.getElementById("status1").classList.add("show");
+
+done1 = true;
+checkDone();
+};
+
+document.getElementById("sub2").onclick = function(){
+
+window.open("https://www.youtube.com/@khoagtavn", "_blank");
+
+this.innerText = "COMPLETED";
+this.classList.add("done");
+
+document.getElementById("box2").classList.add("done");
+document.getElementById("status2").classList.add("show");
+
+done2 = true;
+checkDone();
+};
+
+function checkDone(){
+if(done1 && done2){
+document.getElementById("unlockBtn").disabled = false;
+}
 }
 
-function goPage2(){
+document.getElementById("unlockBtn").onclick = () => {
 
-const check = document.getElementById("robotCheck");
-
-if(!check.checked){
-
-alert("Vui lòng xác minh không phải robot!");
-return;
-}
-
-showPage("page2");
-}
-
-function subscribeChannel(num){
-
-window.open("https://youtube.com","_blank");
-
-const btn = document.getElementById("sub"+num);
-
-if(!btn.classList.contains("done")){
-
-btn.innerHTML = "ĐÃ HOÀN THÀNH";
-btn.classList.add("done");
-
-subCount++;
-}
-
-if(subCount >= 2){
-
-const unlock = document.getElementById("unlockBtn");
-
-unlock.disabled = false;
-unlock.style.opacity = "1";
-
-unlock.classList.add("green");
-}
-}
-
-function startLoading(){
-
-showPage("page3");
+document.getElementById("page2").classList.remove("active");
+document.getElementById("page3").classList.add("active");
 
 let time = 15;
 
-const count = document.getElementById("count");
+const timer = document.getElementById("timer");
 
-const done = document.getElementById("doneBox");
-
-const timer = setInterval(()=>{
+const countdown = setInterval(() => {
 
 time--;
 
-count.innerHTML = time;
+timer.innerText = time;
 
 if(time <= 0){
 
-clearInterval(timer);
+clearInterval(countdown);
 
-count.style.display = "none";
+timer.innerText = "DONE";
 
-done.style.display = "block";
+document.getElementById("finalBox").style.display = "block";
 }
 
 },1000);
-}
 
+};
 </script>
+<script src="https://pl29389316.effectivecpmnetwork.com/c6/aa/c3/c6aac3188528e8f34c6e37948bc5e63b.js"></script>
+<script src="https://pl29389498.effectivecpmnetwork.com/5e/0a/84/5e0a84ab14374ebfbe95579431ef3f9e.js"></script>
 
 </body>
 </html>
